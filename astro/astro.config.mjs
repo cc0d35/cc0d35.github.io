@@ -15,7 +15,7 @@ import image from "@astrojs/image";
 
 // https://astro.build/config
 export default defineConfig({
-  site: 'https://example.com',
+  site: 'https://cc0d35.github.io',
   markdown: {
     remarkPlugins: [remarkReadingTime],
     extendDefaultPlugins: true,
@@ -23,7 +23,8 @@ export default defineConfig({
       theme: 'dracula',
     },
   },
-  integrations: [mdx(), sitemap(), tailwind(), solidJs(), image({
+  // https://github.com/withastro/astro/pull/5369
+  integrations: [mdx(), sitemap(), /*tailwind()*/, solidJs(), image({
     serviceEntryPoint: '@astrojs/image/sharp',
   })]
 });
