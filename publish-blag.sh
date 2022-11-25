@@ -19,4 +19,5 @@ npm install && \
     git add . && \
     git commit -S -m "[Automated] Publish ${PUBLISH_COMMIT}" && \
     git push --force-with-lease && \
+    rm -fr "$TMP_DIR" && \
     echo "Published successfully."

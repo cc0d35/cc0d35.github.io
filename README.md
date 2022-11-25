@@ -1,12 +1,12 @@
-0xcc0de3.github.io
-==================
+[cc0de3.github.io](https://cc0d35.github.io)
+============================================
 
 A blag of mine.
 
 The site is build on `astro`. The sources are in `./astro/`, consult 
 the `./astro/README.md` for more details on running or editing.
 
-Build files are commited to `gh-pages` branch using !TODO: create and name the script!.
+Build files are commited to `gh-pages` branch using `./publish-blag.sh`.
 
 
 Contributing
