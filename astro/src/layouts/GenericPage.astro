@@ -2,7 +2,6 @@
 import BaseHead from "../components/BaseHead.astro";
 import Header from "../components/Header.astro";
 import Footer from "../components/Footer.astro";
-import { EditMeOnGithub } from "./EditMeOnGithub.jsx";
 
 export interface Props {
 	content: {
@@ -11,19 +10,11 @@ export interface Props {
 		pubDate?: string;
 		updatedDate?: string;
 		heroImage?: string;
-		minutesRead?: string;
 	};
 }
 
 const {
-	content: {
-		title,
-		description,
-		pubDate,
-		updatedDate,
-		heroImage,
-		minutesRead,
-	},
+	content: { title, description, pubDate, updatedDate, heroImage },
 	file,
 } = Astro.props;
 ---
@@ -61,33 +52,10 @@ const {
 						</div>
 					)
 				}
-				<br />
-				{minutesRead && `~${minutesRead}`}
 				<hr />
 				<slot />
 			</article>
-			<hr />
-			<EditMeOnGithub localFilePath={file} />
-			<hr />
-			<div class="giscus"></div>
 		</main>
 		<Footer />
-		<script
-			src="https://giscus.app/client.js"
-			data-repo="cc0d35/cc0d35.github.io"
-			data-repo-id="R_kgDOId6C4Q"
-			data-category="Announcements"
-			data-category-id="DIC_kwDOId6C4c4CSv9Y"
-			data-mapping="pathname"
-			data-strict="0"
-			data-reactions-enabled="1"
-			data-emit-metadata="0"
-			data-input-position="top"
-			data-theme="preferred_color_scheme"
-			data-lang="en"
-			data-loading="lazy"
-			crossorigin="anonymous"
-			async
-		></script>
 	</body>
 </html>

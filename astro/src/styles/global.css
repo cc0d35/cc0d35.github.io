@@ -1,3 +1,19 @@
+:root {
+	--text-primary: #444;
+	--text-strong: #222;
+	--background-primary: #fff;
+	--accent: #cc0d35;
+
+	--anchor-primary: #3273dc;
+
+	--code-background: #f2f2f2;
+	--blockquote-border: 1px solid #999;
+	--blockquote-text: #222;
+
+	--paragraph-margin: 1.25rem 0;
+}
+
+
 /*
   The CSS in this style tag is based off of Bear Blog's default CSS.
   https://github.com/HermanMartinus/bearblog/blob/297026a877bc2ab2b3bdfbd6b9f7961c350917dd/templates/styles/blog/default.css
@@ -7,29 +23,55 @@ body {
 	font-family: Verdana, sans-serif;
 	margin: auto;
 	padding: 20px;
-	max-width: 65ch;
+	max-width: 120ch;
 	text-align: left;
-	background-color: #fff;
+	background-color: var(--background-primary);
 	word-wrap: break-word;
 	overflow-wrap: break-word;
 	line-height: 1.5;
-	color: #444;
+	color: var(--text-primary);
+}
+h1 {
+	font-size: 2em;
+}
+h2 {
+	font-size: 1.8em;
+}
+h3 {
+	font-size: 1.6em;
+}
+h4 {
+	font-size: 1.4em;
+}
+h5 {
+	font-size: 1.2em;
+}
+h6 {
+	font-size: 1em;
 }
 h1,
 h2,
 h3,
 h4,
 h5,
-h6,
+h6 {
+	color: var(--text-strong);
+	margin-bottom: 1.25rem;
+}
+
+
 strong,
 b {
-	color: #222;
+	color: var(--text-strong);
 }
 a {
-	color: #3273dc;
+	color: var(--anchor-primary);
 }
 nav a {
 	margin-right: 10px;
+}
+p {
+	margin: var(--paragraph-margin);
 }
 textarea {
 	width: 100%;
@@ -47,21 +89,58 @@ table {
 img {
 	max-width: 100%;
 	height: auto;
+	margin: 0 auto;
 }
 code {
 	padding: 2px 5px;
-	background-color: #f2f2f2;
+	background-color: var(--codeblock-background);
+	color: var(--codeblock-text-color);
+	border-radius: var(--codeblock-border-radius);
 }
 pre {
 	padding: 1rem;
+	margin-bottom: 1rem;
+	border-radius: 5px;
 }
 pre > code {
 	all: unset;
 }
 blockquote {
-	border: 1px solid #999;
-	color: #222;
+	border: var(--blockquote-border);
+	color: var(--blockquote-text);
 	padding: 2px 0px 2px 20px;
 	margin: 0px;
 	font-style: italic;
+}
+
+li {
+	list-style: inside;
+}
+
+.accent {
+	color: var(--accent);
+}
+
+:root {
+	--codeblock-background: #282A36;
+	--codeblock-text-file-color: #F8F8F2a3;
+	--codeblock-text-color: #F8F8F2;
+	--codeblock-border-radius: 5px;
+}
+
+label.filename-for-codeblock {
+	color: var(--codeblock-text-file-color);
+	background-color: var(--codeblock-background);
+	display: block;
+	padding: .5rem 1.3rem;
+	border-radius: var(--codeblock-border-radius) var(--codeblock-border-radius) 0 0;
+	border-bottom: 1px var(--background-primary) solid;
+}
+
+label.filename-for-codeblock span {
+	color: var(--codeblock-text-color);
+}
+
+label.filename-for-codeblock + pre {
+	border-radius: 0 0 var(--codeblock-border-radius) var(--codeblock-border-radius);
 }
